@@ -4,7 +4,8 @@
 */
 
 function multiply(a, b) {
-
+	var product = a * b;
+	return product;
 }
 
 /*
@@ -15,6 +16,24 @@ function multiply(a, b) {
 */
 
 function power(base, exponent) {
+//counter counts the cycle through the loop
+//value starts the loop with 1
+	var counter = 0
+	var value = 1
+//exponent of 0 wouldn't get multiplied
+	if (exponent === 0) {
+		return 0
+	}
+	else {
+		//as long as the counter is less than the exponent  
+	    while (counter<exponent) {
+	//we have to begin by multiplying the var value (which, the first time through, is the base) by the base once		
+			value = multiply(base, value); 
+	//And then we have to up the counter one number
+			counter++	
+	    }
+	}
 
+	return value
 }
 
